@@ -1,0 +1,18 @@
+#
+# makefile for fsu::List project
+#
+
+HOME  = /home/courses/cop4530p/spring12
+TCPP  = $(HOME)/tcpp
+CPP   = $(HOME)/cpp
+TESTS = $(HOME)/tests
+PROJ  = .
+CC    = g++ -W -Wall -Wextra -I. -I$(CPP) -I$(TCPP)
+
+all: flist.x mlist.x
+
+flist.x:  $(TESTS)/flist.cpp $(TCPP)/list.h $(PROJ)/list.cpp
+	$(CC) -oflist.x $(TESTS)/flist.cpp
+
+mlist.x:  $(TESTS)/mlist.cpp $(TCPP)/list.h $(PROJ)/list.cpp
+	$(CC) -omlist.x $(TESTS)/mlist.cpp
